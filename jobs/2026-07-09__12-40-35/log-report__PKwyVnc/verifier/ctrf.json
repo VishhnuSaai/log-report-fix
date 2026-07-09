@@ -1,0 +1,77 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 5,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1783581055.7198248,
+            "stop": 1783581055.7805674
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_report_exists",
+                "status": "passed",
+                "duration": 0.0007806000000005753,
+                "start": 1783581055.7573204,
+                "stop": 1783581055.7591202,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_report_is_valid_json_object",
+                "status": "passed",
+                "duration": 0.000553921999999929,
+                "start": 1783581055.7594175,
+                "stop": 1783581055.7609298,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_total_requests_correct",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0012417729999985028,
+                "start": 1783581055.761203,
+                "stop": 1783581055.7728612,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_total_requests_correct():\n        \"\"\"total_requests must equal the true number of log lines (6).\"\"\"\n        data = _load_report()\n        assert isinstance(data[\"total_requests\"], int), \"total_requests must be an int\"\n>       assert data[\"total_requests\"] == EXPECTED_TOTAL_REQUESTS, (\n            f\"expected total_requests={EXPECTED_TOTAL_REQUESTS}, got {data['total_requests']}\"\n        )\nE       AssertionError: expected total_requests=6, got 1005\nE       assert 1005 == 6\n\n/tests/test_outputs.py:37: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_unique_ips_correct",
+                "status": "passed",
+                "duration": 0.0005367879999997882,
+                "start": 1783581055.7731776,
+                "stop": 1783581055.7747216,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_top_path_correct",
+                "status": "passed",
+                "duration": 0.000512334999998032,
+                "start": 1783581055.7751694,
+                "stop": 1783581055.7767537,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_source_log_untouched",
+                "status": "passed",
+                "duration": 0.0006475320000003393,
+                "start": 1783581055.7770414,
+                "stop": 1783581055.7793336,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}
