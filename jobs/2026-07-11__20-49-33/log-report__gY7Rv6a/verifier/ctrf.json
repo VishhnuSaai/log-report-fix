@@ -1,0 +1,89 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 6,
+            "passed": 1,
+            "failed": 5,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1783783180.7367542,
+            "stop": 1783783180.7840626
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_report_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0006839839999770447,
+                "start": 1783783180.7576144,
+                "stop": 1783783180.7674205,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_report_exists():\n        \"\"\"The agent must write /app/report.json.\"\"\"\n>       assert REPORT_PATH.exists(), \"no report.json found at /app/report.json\"\nE       AssertionError: no report.json found at /app/report.json\nE       assert False\nE        +  where False = exists()\nE        +    where exists = PosixPath('/app/report.json').exists\n\n/tests/test_outputs.py:22: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_report_is_valid_json_object",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.000569071000029453,
+                "start": 1783783180.7676466,
+                "stop": 1783783180.7710552,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_report_is_valid_json_object():\n        \"\"\"report.json must parse as a JSON object with the required keys.\"\"\"\n>       data = _load_report()\n               ^^^^^^^^^^^^^^\n\n/tests/test_outputs.py:27: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def _load_report():\n>       assert REPORT_PATH.exists(), \"no /app/report.json found\"\nE       AssertionError: no /app/report.json found\nE       assert False\nE        +  where False = exists()\nE        +    where exists = PosixPath('/app/report.json').exists\n\n/tests/test_outputs.py:15: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_total_requests_correct",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0004942620000178977,
+                "start": 1783783180.771288,
+                "stop": 1783783180.7747698,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_total_requests_correct():\n        \"\"\"total_requests must equal the true number of log lines (6).\"\"\"\n>       data = _load_report()\n               ^^^^^^^^^^^^^^\n\n/tests/test_outputs.py:35: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def _load_report():\n>       assert REPORT_PATH.exists(), \"no /app/report.json found\"\nE       AssertionError: no /app/report.json found\nE       assert False\nE        +  where False = exists()\nE        +    where exists = PosixPath('/app/report.json').exists\n\n/tests/test_outputs.py:15: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_unique_ips_correct",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00042445299999371855,
+                "start": 1783783180.7749715,
+                "stop": 1783783180.7785244,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_unique_ips_correct():\n        \"\"\"unique_ips must equal the true count of distinct client IPs (3).\"\"\"\n>       data = _load_report()\n               ^^^^^^^^^^^^^^\n\n/tests/test_outputs.py:44: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def _load_report():\n>       assert REPORT_PATH.exists(), \"no /app/report.json found\"\nE       AssertionError: no /app/report.json found\nE       assert False\nE        +  where False = exists()\nE        +    where exists = PosixPath('/app/report.json').exists\n\n/tests/test_outputs.py:15: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_top_path_correct",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00040904999997337654,
+                "start": 1783783180.7787104,
+                "stop": 1783783180.7820027,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_top_path_correct():\n        \"\"\"top_path must identify the most-requested path ('/index.html').\"\"\"\n>       data = _load_report()\n               ^^^^^^^^^^^^^^\n\n/tests/test_outputs.py:53: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def _load_report():\n>       assert REPORT_PATH.exists(), \"no /app/report.json found\"\nE       AssertionError: no /app/report.json found\nE       assert False\nE        +  where False = exists()\nE        +    where exists = PosixPath('/app/report.json').exists\n\n/tests/test_outputs.py:15: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_source_log_untouched",
+                "status": "passed",
+                "duration": 0.0004088509999746748,
+                "start": 1783783180.7821822,
+                "stop": 1783783180.7833288,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}

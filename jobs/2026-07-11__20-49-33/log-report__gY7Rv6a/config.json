@@ -1,0 +1,12 @@
+{
+    "task": {
+        "path": "log-report",
+        "source": "fix-task-broken (1)"
+    },
+    "trial_name": "log-report__gY7Rv6a",
+    "trials_dir": "jobs\\2026-07-11__20-49-33",
+    "agent": {
+        "name": "nop"
+    },
+    "job_id": "8ec92785-dab8-42c8-b210-058e3946f1ea"
+}

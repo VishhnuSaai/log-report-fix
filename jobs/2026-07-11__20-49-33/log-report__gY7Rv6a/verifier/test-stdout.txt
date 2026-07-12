@@ -1,0 +1,101 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.12, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 6 items
+
+../tests/test_outputs.py FFFFF.                                          [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_report_exists ______________________________
+
+    def test_report_exists():
+        """The agent must write /app/report.json."""
+>       assert REPORT_PATH.exists(), "no report.json found at /app/report.json"
+E       AssertionError: no report.json found at /app/report.json
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:22: AssertionError
+_______________________ test_report_is_valid_json_object _______________________
+
+    def test_report_is_valid_json_object():
+        """report.json must parse as a JSON object with the required keys."""
+>       data = _load_report()
+               ^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_report():
+>       assert REPORT_PATH.exists(), "no /app/report.json found"
+E       AssertionError: no /app/report.json found
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:15: AssertionError
+_________________________ test_total_requests_correct __________________________
+
+    def test_total_requests_correct():
+        """total_requests must equal the true number of log lines (6)."""
+>       data = _load_report()
+               ^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_report():
+>       assert REPORT_PATH.exists(), "no /app/report.json found"
+E       AssertionError: no /app/report.json found
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:15: AssertionError
+___________________________ test_unique_ips_correct ____________________________
+
+    def test_unique_ips_correct():
+        """unique_ips must equal the true count of distinct client IPs (3)."""
+>       data = _load_report()
+               ^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_report():
+>       assert REPORT_PATH.exists(), "no /app/report.json found"
+E       AssertionError: no /app/report.json found
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:15: AssertionError
+____________________________ test_top_path_correct _____________________________
+
+    def test_top_path_correct():
+        """top_path must identify the most-requested path ('/index.html')."""
+>       data = _load_report()
+               ^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_report():
+>       assert REPORT_PATH.exists(), "no /app/report.json found"
+E       AssertionError: no /app/report.json found
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:15: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../tests/test_outputs.py::test_source_log_untouched
+FAILED ../tests/test_outputs.py::test_report_exists - AssertionError: no repo...
+FAILED ../tests/test_outputs.py::test_report_is_valid_json_object - Assertion...
+FAILED ../tests/test_outputs.py::test_total_requests_correct - AssertionError...
+FAILED ../tests/test_outputs.py::test_unique_ips_correct - AssertionError: no...
+FAILED ../tests/test_outputs.py::test_top_path_correct - AssertionError: no /...
+========================= 5 failed, 1 passed in 0.05s ==========================
